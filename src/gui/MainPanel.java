@@ -2,7 +2,7 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
- 
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,7 +21,8 @@ public class MainPanel extends JPanel {
         paneltitle = new JLabel("My Glossary");
         paneltitle.setBounds(180,10, 500, 40);
         this.add(paneltitle);
-        btn = new JButton("ŒŸõ");
+        
+        btn = new JButton("å˜èªæ¤œç´¢");
         btn.setBounds(20, 50,420, 50);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -29,7 +30,9 @@ public class MainPanel extends JPanel {
             }
         });
         this.add(btn);
-        btn2 = new JButton("“o˜^");
+        
+        
+        btn2 = new JButton("å˜èªç™»éŒ²^");
         btn2.setBounds(20, 100, 420, 50);
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -37,7 +40,9 @@ public class MainPanel extends JPanel {
             }
         });
         this.add(btn2);
-        btn3 = new JButton("íœ");
+        
+        
+        btn3 = new JButton("å˜èªå‰Šé™¤");
         btn3.setBounds(20, 150, 420, 50);
         btn3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
@@ -45,6 +50,8 @@ public class MainPanel extends JPanel {
             }
         });
         this.add(btn3);
+        
+        
       //  this.setBackground(Color.getHSBColor(0,255,255));
     }
     public void pc(String str){

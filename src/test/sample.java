@@ -10,6 +10,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class sample extends JFrame implements ActionListener{
 	
@@ -33,7 +34,7 @@ public class sample extends JFrame implements ActionListener{
 	    /* View2 */
 	    JPanel card2 = new JPanel();
 	    card2.add(new JLabel("索引"));
-	    card2.add(new JCheckBox("checkbox1"));
+	    card2.add(new JTextArea("checkbox1"));
 	    card2.add(new JCheckBox("checkbox2"));
 	   
 	    

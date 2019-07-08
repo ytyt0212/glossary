@@ -10,9 +10,9 @@ import javax.swing.JPanel;
 public class MainPanel extends JPanel {
     JButton btn,btn2,btn3;
     JLabel paneltitle;
-    MainFrame mf;
+    MainPage mf;
     String str;
-    public MainPanel(MainFrame m,String s){
+    public MainPanel(MainPage m,String s){
         mf = m;
         str = s;
         this.setName("mp");

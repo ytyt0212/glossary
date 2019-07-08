@@ -7,12 +7,12 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
  
-public class MainPanel extends JPanel {
+public class MainPage extends JPanel {
     JButton btn,btn2,btn3;
     JLabel paneltitle;
     MainFrame mf;
     String str;
-    public MainPanel(MainFrame m,String s){
+    public MainPage(MainFrame m,String s){
         mf = m;
         str = s;
         this.setName("mp");

@@ -8,11 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
  
-public class SubPanel extends JPanel {
+public class SearchPage1 extends JPanel {
     JButton btn = new JButton("ƒgƒbƒv‚É–ß‚é");  
     MainFrame mf;
     String str;
-    public SubPanel(MainFrame m,String s){
+    public SearchPage1(MainFrame m,String s){
         mf = m;
         str = s;
         this.setName(s);

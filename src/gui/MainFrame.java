@@ -6,10 +6,10 @@ import javax.swing.JPanel;
 
 public class MainFrame extends JFrame{
 	public String[] PanelNames = {"mp","Sub1","Sub2","Sub3"};
-    MainPanel main = new MainPanel(this,PanelNames[0]);
-    SubPanel sp = new SubPanel(this,PanelNames[1]);
-    SubPanel2 sp2 = new SubPanel2(this,PanelNames[2]);
-    SubPanel3 sp3 = new SubPanel3(this,PanelNames[3]);
+    MainPage main = new MainPage(this,PanelNames[0]);
+    SearchPage1 sp = new SearchPage1(this,PanelNames[1]);
+    InsertPage sp2 = new InsertPage(this,PanelNames[2]);
+    UpdatePage sp3 = new UpdatePage(this,PanelNames[3]);
      
     public MainFrame(){
         this.add(main);main.setVisible(true);
@@ -28,16 +28,16 @@ public class MainFrame extends JFrame{
         System.out.println(jp.getName());
         String name = jp.getName();
         if(name==PanelNames[0]){
-            main = (MainPanel)jp;
+            main = (MainPage)jp;
             main.setVisible(false);
         }else if(name==PanelNames[1]){
-            sp = (SubPanel)jp;
+            sp = (SearchPage1)jp;
             sp.setVisible(false);
         }else if(name==PanelNames[2]){
-            sp2 = (SubPanel2)jp;
+            sp2 = (InsertPage)jp;
             sp2.setVisible(false);
         }else if(name==PanelNames[3]){
-            sp3 = (SubPanel3
+            sp3 = (UpdatePage
             		)jp;
             sp3.setVisible(false);
         }

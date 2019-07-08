@@ -18,6 +18,7 @@ public class SubPanel extends JPanel {
         this.setName(s);
         this.setLayout(null);
         this.setSize(400, 200);
+        
         JLabel paneltitle = new JLabel("’PŒêŒŸõ‰æ–Ê");
         paneltitle.setBounds(0, 5, 400, 40);
         this.add(paneltitle);

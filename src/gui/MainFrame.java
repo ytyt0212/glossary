@@ -21,6 +21,7 @@ public class MainFrame extends JFrame{
     public static void main(String[] args) {
         MainFrame mf = new MainFrame();
         mf.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        mf.setResizable(false);
         mf.setVisible(true);
     }
     public void PanelChange(JPanel jp, String str){
@@ -37,8 +38,7 @@ public class MainFrame extends JFrame{
             sp2 = (SubPanel2)jp;
             sp2.setVisible(false);
         }else if(name==PanelNames[3]){
-            sp3 = (SubPanel3
-            		)jp;
+            sp3 = (SubPanel3)jp;
             sp3.setVisible(false);
         }
         if(str==PanelNames[0]){

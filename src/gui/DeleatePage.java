@@ -1,13 +1,16 @@
 package gui;
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
- 
+import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
  
 public class DeleatePage extends JPanel {
-    JButton btn = new JButton("ƒgƒbƒv‚É–ß‚é");  
+    JButton btn = new JButton("ï¿½gï¿½bï¿½vï¿½É–ß‚ï¿½"); 
+    JButton btn2 = new JButton("ï¿½íœ"); 
+    JTextField text1 = new JTextField(20);
     MainPage mf;
     String str;
     public DeleatePage(MainPage m,String s){
@@ -15,24 +18,36 @@ public class DeleatePage extends JPanel {
         str = s;
         this.setName(s);
         this.setLayout(null);
-        this.setSize(400, 200);
-        JLabel paneltitle = new JLabel("’PŒêíœ‰æ–Ê");
-        paneltitle.setBounds(0, 5, 400, 40);
+        this.setSize(1000, 1000);
+        JLabel paneltitle = new JLabel("ï¿½Pï¿½ï¿½íœï¿½ï¿½ï¿½");
+        paneltitle.setBounds(200, 5, 400,40);
         this.add(paneltitle);
-        btn.setBounds(150, 50, 200, 40);
+        
+        
+        JLabel paneltext = new JLabel("ï¿½Pï¿½ï¿½");
+        paneltext.setBounds(30,10,400,100);
+        this.add(paneltext);
+        
+        
+        text1.setBounds(100,50,280,25);
+        
+        
+        btn.setBounds(383, 520, 200, 40);
+        btn2.setBounds(190,250,100,50);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc();
             }
         });
         this.add(btn);
+        this.add(btn2);
+        this.add(text1);
+        
+              
        
-        //Float f = (float) Math.random();
-        //this.setBackground(Color.getHSBColor(f, 0.5f, 0.8f));
     }
     public void pc(){
-        mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel‚É–ß‚é
+        mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanelï¿½É–ß‚ï¿½
     }
 }
-
 

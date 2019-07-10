@@ -25,7 +25,7 @@ public class SearchPage1 extends JPanel {
         
         //単語検索タイトル表示
         JLabel paneltitle = new JLabel("単語検索");
-        paneltitle.setBounds(260, 5, 400, 40);
+        paneltitle.setBounds(268, 5, 400, 40);
         this.add(paneltitle);
         
         //テキストボックス横に「単語」表示

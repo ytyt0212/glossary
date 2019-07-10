@@ -2,12 +2,13 @@ package gui;
 
 
 	import java.awt.event.ActionEvent;
+
 	import java.awt.event.ActionListener;
 	 
 	import javax.swing.JButton;
 	import javax.swing.JLabel;
 	import javax.swing.JPanel;
-import javax.swing.JTextField;
+	import javax.swing.JTextField;
 	 
 	public class UpdatePage1 extends JPanel {
 	    JButton btn = new JButton("メインページへ");  
@@ -29,7 +30,7 @@ import javax.swing.JTextField;
 	        tango.setBounds(225,100,150,25);
 	        this.add(tango);
 	        
-	        btn.setBounds(500, 300, 100, 50);
+	        btn.setBounds(360, 300, 200, 40);
 	        btn.addActionListener(new ActionListener(){
 	            public void actionPerformed(ActionEvent e){
 	                pc(mf.PanelNames[0]);
@@ -38,7 +39,7 @@ import javax.swing.JTextField;
 	        this.add(btn);
 	        
 	       
-	        btn2.setBounds(190,200,200,50);
+	        btn2.setBounds(190,200,200,40);
 	        btn2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 	        		pc(mf.PanelNames[6]);
@@ -52,8 +53,7 @@ import javax.swing.JTextField;
 	        words.setBounds(300,100,150,25);
 	        this.add(words);
 	        
-	        //Float f = (float) Math.random();
-	        //this.setBackground(Color.getHSBColor(f, 0.5f, 0.8f));
+	        
 	    }
 	    
 	    

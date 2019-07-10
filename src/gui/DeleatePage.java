@@ -8,8 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
  
 public class DeleatePage extends JPanel {
-    JButton btn = new JButton("�g�b�v�ɖ߂�"); 
-    JButton btn2 = new JButton("�폜"); 
+    JButton btn = new JButton("メインページへ"); 
+    JButton btn2 = new JButton("削除"); 
     JTextField text1 = new JTextField(20);
     MainPage mf;
     String str;
@@ -19,12 +19,12 @@ public class DeleatePage extends JPanel {
         this.setName(s);
         this.setLayout(null);
         this.setSize(1000, 1000);
-        JLabel paneltitle = new JLabel("�P��폜���");
+        JLabel paneltitle = new JLabel("単語削除");
         paneltitle.setBounds(200, 5, 400,40);
         this.add(paneltitle);
         
         
-        JLabel paneltext = new JLabel("�P��");
+        JLabel paneltext = new JLabel("単語");
         paneltext.setBounds(30,10,400,100);
         this.add(paneltext);
         

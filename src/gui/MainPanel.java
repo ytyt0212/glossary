@@ -32,7 +32,7 @@ public class MainPanel extends JPanel {
 		});
 		this.add(btn);
 
-		btn2 = new JButton("単語登録^");
+		btn2 = new JButton("単語登録");
 		btn2.setBounds(20, 100, 420, 50);
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

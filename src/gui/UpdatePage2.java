@@ -21,13 +21,13 @@ public class UpdatePage2 extends JPanel {
 		str = s;
 		this.setName(s);
     	this.setLayout(null);
-    	this.setSize(800,400);
+    	this.setSize(1000,1000);
 		
 		JLabel paneltitle = new JLabel("検索結果");
         paneltitle.setBounds(250, 5, 200, 100);
         this.add(paneltitle);
         
-        btn1.setBounds(500, 500, 100, 50);
+        btn1.setBounds(360, 500, 200, 40);
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[0]);
@@ -36,7 +36,7 @@ public class UpdatePage2 extends JPanel {
         this.add(btn1);
         
        
-        btn2.setBounds(400, 500, 100, 50);
+        btn2.setBounds(100, 500, 200, 40);
         btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
         		pc(mf.PanelNames[5]);
@@ -46,7 +46,7 @@ public class UpdatePage2 extends JPanel {
         });
         this.add(btn2);
         
-        btn3.setBounds(400,350,200,45);
+        btn3.setBounds(400,350,200,40);
         
         this.add(btn3);
         

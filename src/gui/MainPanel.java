@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainPanel extends JPanel {
-	JButton btn, btn2, btn3, btn4;
+	JButton btn, btn2, btn3, btn4,btn5;
 	JLabel paneltitle;
 	MainPage mf;
 	String str;
@@ -58,6 +58,15 @@ public class MainPanel extends JPanel {
 			}
 		});
 		this.add(btn4);
+		
+		btn5 = new JButton("索引");
+		btn5.setBounds(20, 250, 420, 50);
+		btn5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pc(mf.PanelNames[7]);
+			}
+		});
+		this.add(btn5);
 	}
 
 	public void pc(String str) {

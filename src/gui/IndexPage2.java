@@ -44,7 +44,7 @@ public class IndexPage2 extends JPanel {
         });
         this.add(btn2);
         
-        btn3 = new JButton("トップへ");
+        btn3 = new JButton("メインページへ");
         btn3.setBounds(386, 520, 200, 40);
         btn3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){

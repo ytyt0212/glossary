@@ -12,8 +12,9 @@ public class MainPage extends JFrame {
 	SearchPage2 sp4 = new SearchPage2(this, PanelNames[4]);
 	UpdatePage1 sp5 = new UpdatePage1(this, PanelNames[5]);
 	UpdatePage2 sp6 = new UpdatePage2(this, PanelNames[6]);
-	// IndexPage1 sp7 = new IndexPage1(this, PanelNames[7]);
-	// IndexPage2 sp8 = new IndexPage2(this,PanelNames[8]);
+	IndexPage1 sp7 = new IndexPage1(this, PanelNames[7]);
+	IndexPage2 sp8 = new IndexPage2(this, PanelNames[8]);
+
 	public MainPage() {
 		this.add(main);
 		main.setVisible(true);
@@ -29,8 +30,10 @@ public class MainPage extends JFrame {
 		sp5.setVisible(false);
 		this.add(sp6);
 		sp6.setVisible(false);
-		// this.add(sp7);sp7.setVisible(false);
-		// this.add(sp8);sp8.setVisible(false);
+		this.add(sp7);
+		sp7.setVisible(false);
+		this.add(sp8);
+		sp8.setVisible(false);
 
 		this.setBounds(00, 00, 600, 600);
 	}
@@ -67,12 +70,13 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[6]) {
 			sp6 = (UpdatePage2) jp;
 			sp6.setVisible(false);
-		} // else if (name == PanelNames[7]) {
-			// sp7 = (IndexPage1) jp;
-			// sp7.setVisible(false);
-	// }else if (name == PanelNames[8]) {
-			// sp8 = (IndexPage2) jp;
-			// sp8.setVisible(false);
+	    } else if (name == PanelNames[7]) {
+			 sp7 = (IndexPage1) jp;
+			 sp7.setVisible(false);
+		} else if (name == PanelNames[8]) {
+			 sp8 = (IndexPage2) jp;
+			 sp8.setVisible(false);
+		}
 
 		if (str == PanelNames[0]) {
 			main.setVisible(true);
@@ -88,9 +92,11 @@ public class MainPage extends JFrame {
 			sp5.setVisible(true);
 		} else if (str == PanelNames[6]) {
 			sp6.setVisible(true);
-		} // else if (str == PanelNames[7]) {
-			// sp7.setVisible(true);
-		//}else if (str == PanelNames[8]) {
-			//sp8.setVisible(true);
+		} else if (str == PanelNames[7]) {
+			 sp7.setVisible(true);
+		}else if (str == PanelNames[8]) {
+			sp8.setVisible(true);
+		}
 	}
-}
+}	
+

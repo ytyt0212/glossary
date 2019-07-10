@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class UpdatePage2 extends JPanel {
-	JButton btn1 = new JButton("トップ");
+	JButton btn1 = new JButton("メインページへ");
 	JButton btn2 = new JButton("戻る");
 	JButton btn3 = new JButton("更新");
 	MainPage mf;

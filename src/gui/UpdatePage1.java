@@ -7,9 +7,10 @@ package gui;
 	import javax.swing.JButton;
 	import javax.swing.JLabel;
 	import javax.swing.JPanel;
+import javax.swing.JTextField;
 	 
 	public class UpdatePage1 extends JPanel {
-	    JButton btn = new JButton("トップに戻る");  
+	    JButton btn = new JButton("トップ");  
 	    JButton btn2 = new JButton("検索");
 	    MainPage mf;
 	    String str;
@@ -18,13 +19,17 @@ package gui;
 	        str = s;
 	        this.setName(s);
 	        this.setLayout(null);
-	        this.setSize(400, 400);
+	        this.setSize(800,400);
 	        
 	        JLabel paneltitle = new JLabel("更新");
-	        paneltitle.setBounds(0, 5, 400, 40);
+	        paneltitle.setBounds(275, 5, 200, 100);
 	        this.add(paneltitle);
 	        
-	        btn.setBounds(150, 50, 200, 40);
+	        JLabel tango = new JLabel("単語");
+	        tango.setBounds(225,100,150,25);
+	        this.add(tango);
+	        
+	        btn.setBounds(500, 300, 100, 50);
 	        btn.addActionListener(new ActionListener(){
 	            public void actionPerformed(ActionEvent e){
 	                pc(mf.PanelNames[0]);
@@ -33,7 +38,7 @@ package gui;
 	        this.add(btn);
 	        
 	       
-	        btn2.setBounds(170, 300, 200, 50);
+	        btn2.setBounds(190,200,200,50);
 	        btn2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 	        		pc(mf.PanelNames[6]);
@@ -42,6 +47,11 @@ package gui;
 
 	        });
 	        this.add(btn2);
+	        
+	        JTextField words = new JTextField(20);
+	        words.setBounds(300,100,150,25);
+	        this.add(words);
+	        
 	        //Float f = (float) Math.random();
 	        //this.setBackground(Color.getHSBColor(f, 0.5f, 0.8f));
 	    }

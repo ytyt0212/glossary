@@ -19,12 +19,15 @@ public class UpdatePage2 extends JPanel {
 	public UpdatePage2(MainPage m,String s) {
 		mf = m;
 		str = s;
+		this.setName(s);
+    	this.setLayout(null);
+    	this.setSize(800,400);
 		
 		JLabel paneltitle = new JLabel("検索結果");
-        paneltitle.setBounds(5, 0, 400, 40);
+        paneltitle.setBounds(250, 5, 200, 100);
         this.add(paneltitle);
         
-        btn1.setBounds(150, 50, 200, 40);
+        btn1.setBounds(500, 500, 100, 50);
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[0]);
@@ -33,28 +36,32 @@ public class UpdatePage2 extends JPanel {
         this.add(btn1);
         
        
-        btn2.setBounds(170, 300, 200, 50);
+        btn2.setBounds(400, 500, 100, 50);
         btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-        		pc(mf.PanelNames[4]);
+        		pc(mf.PanelNames[5]);
 			}
 
 
         });
         this.add(btn2);
         
-        btn3.setBounds(190,320,200,50);
+        btn3.setBounds(400,350,200,45);
         
         this.add(btn3);
         
         String []  categorydata = {"テクノロジ","マネジメント","ストラテジ"};
         JComboBox category = new JComboBox(categorydata);
-        category.setBounds(400,50,150,55);
+        category.setBounds(300,100,150,25);
         this.add(category);
         
         JTextField wordstext = new JTextField(200);
-        wordstext.setBounds(150,50,100,40);
+        wordstext.setBounds(55,200,450,130);
         this.add(wordstext);
+        
+        JTextField words = new JTextField(20);
+        words.setBounds(100,100,150,25);
+        this.add(words);
         
         //Float f = (float) Math.random();
         //this.setBackground(Color.getHSBColor(f, 0.5f, 0.8f));

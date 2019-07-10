@@ -21,11 +21,11 @@ public class SearchPage1 extends JPanel {
         str = s;
         this.setName(s);
         this.setLayout(null);
-        this.setSize(400, 400);
+        this.setSize(1000, 1000);
         
         //単語検索タイトル表示
         JLabel paneltitle = new JLabel("単語検索");
-        paneltitle.setBounds(250, 5, 400, 40);
+        paneltitle.setBounds(260, 5, 400, 40);
         this.add(paneltitle);
         
         //テキストボックス横に「単語」表示
@@ -51,7 +51,7 @@ public class SearchPage1 extends JPanel {
         		
         
         //検索画面遷移
-        btn2.setBounds(250,300,100,40);       
+        btn2.setBounds(195, 527,200, 40);       
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc_result();
@@ -60,7 +60,7 @@ public class SearchPage1 extends JPanel {
         this.add(btn2);
         
         //メインページ画面遷移
-        btn1.setBounds(200,360, 200, 40);
+        btn1.setBounds(394, 527, 200, 40);
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc_main();

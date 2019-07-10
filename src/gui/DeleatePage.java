@@ -32,8 +32,8 @@ public class DeleatePage extends JPanel {
         text1.setBounds(100,50,280,25);
         
         
-        btn.setBounds(383, 520, 200, 40);
-        btn2.setBounds(190,250,100,50);
+        btn.setBounds(394, 527, 200, 40);
+        btn2.setBounds(190,200,200,40);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc();

@@ -27,7 +27,7 @@ public class UpdatePage2 extends JPanel {
         paneltitle.setBounds(250, 5, 200, 100);
         this.add(paneltitle);
         
-        btn1.setBounds(360, 500, 200, 40);
+        btn1.setBounds(394, 527, 200, 40);
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[0]);
@@ -36,7 +36,7 @@ public class UpdatePage2 extends JPanel {
         this.add(btn1);
         
        
-        btn2.setBounds(100, 500, 200, 40);
+        btn2.setBounds(195, 527,200, 40);
         btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
         		pc(mf.PanelNames[5]);

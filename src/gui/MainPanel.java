@@ -19,12 +19,12 @@ public class MainPanel extends JPanel {
 		this.setName("mp");
 		this.setLayout(null);
 		this.setSize(1000, 1000);
-		paneltitle = new JLabel("My Glossary");
-		paneltitle.setBounds(180, 10, 500, 40);
+		paneltitle = new JLabel("My    Glossary");
+		paneltitle.setBounds(255, 10, 500, 40);
 		this.add(paneltitle);
 
 		btn = new JButton("単語検索");
-		btn.setBounds(20, 50, 420, 50);
+		btn.setBounds(203, 70, 180, 50);
 		btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pc(mf.PanelNames[1]);
@@ -33,7 +33,7 @@ public class MainPanel extends JPanel {
 		this.add(btn);
 
 		btn2 = new JButton("単語登録");
-		btn2.setBounds(20, 100, 420, 50);
+		btn2.setBounds(203, 150, 180, 50);
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pc(mf.PanelNames[2]);
@@ -42,7 +42,7 @@ public class MainPanel extends JPanel {
 		this.add(btn2);
 
 		btn3 = new JButton("単語削除");
-		btn3.setBounds(20, 150, 420, 50);
+		btn3.setBounds(203, 230, 180, 50);
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pc(mf.PanelNames[3]);
@@ -51,7 +51,7 @@ public class MainPanel extends JPanel {
 		this.add(btn3);
 
 		btn4 = new JButton("単語更新");
-		btn4.setBounds(20, 200, 420, 50);
+		btn4.setBounds(203, 310, 180, 50);
 		btn4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pc(mf.PanelNames[5]);
@@ -60,7 +60,7 @@ public class MainPanel extends JPanel {
 		this.add(btn4);
 		
 		btn5 = new JButton("索引");
-		btn5.setBounds(20, 250, 420, 50);
+		btn5.setBounds(203, 390, 180, 50);
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pc(mf.PanelNames[7]);

@@ -20,7 +20,7 @@ package gui;
 	        str = s;
 	        this.setName(s);
 	        this.setLayout(null);
-	        this.setSize(800,400);
+	        this.setSize(1000,1000);
 	        
 	        JLabel paneltitle = new JLabel("更新");
 	        paneltitle.setBounds(275, 5, 200, 100);
@@ -30,7 +30,7 @@ package gui;
 	        tango.setBounds(225,100,150,25);
 	        this.add(tango);
 	        
-	        btn.setBounds(360, 300, 200, 40);
+	        btn.setBounds(394, 527, 200, 40);
 	        btn.addActionListener(new ActionListener(){
 	            public void actionPerformed(ActionEvent e){
 	                pc(mf.PanelNames[0]);

@@ -33,7 +33,7 @@ public class IndexPage1 extends JPanel {
        this.add(category);
         
         btn1 = new JButton("実行");  
-        btn1.setBounds(185, 520,200, 40); 
+        btn1.setBounds(195, 527,200, 40); 
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[8]);   
@@ -42,7 +42,7 @@ public class IndexPage1 extends JPanel {
         this.add(btn1);   
         
         btn2 = new JButton("メインページへ");
-        btn2.setBounds(383, 520, 200, 40);
+        btn2.setBounds(394, 527, 200, 40);
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[0]);  

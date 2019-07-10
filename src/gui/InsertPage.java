@@ -55,13 +55,13 @@ public class InsertPage extends JPanel {
         
         //ボタン「登録」
         JButton btn2 = new JButton("登録");
-        btn2.setBounds(200,330,200,40);
+        btn2.setBounds(195,330,200,40);
         this.add(btn2);
         
         
         this.add(text1);
         this.add(paneltitle);
-        btn.setBounds(200,400, 200, 40);
+        btn.setBounds(394, 527, 200, 40);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc();

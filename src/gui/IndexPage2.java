@@ -27,7 +27,7 @@ public class IndexPage2 extends JPanel {
       
         
         btn1 = new JButton("単語検索");  
-        btn1.setBounds(0, 520,200, 40); 
+        btn1.setBounds(0, 527,200, 40); 
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[1]);   
@@ -36,16 +36,16 @@ public class IndexPage2 extends JPanel {
         this.add(btn1);   
         
         btn2 = new JButton("戻る");
-        btn2.setBounds(195, 520, 200, 40);
+        btn2.setBounds(195, 527,200, 40);
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                pc(mf.PanelNames[5]);  
+                pc(mf.PanelNames[7]);  
             }
         });
         this.add(btn2);
         
         btn3 = new JButton("メインページへ");
-        btn3.setBounds(386, 520, 200, 40);
+        btn3.setBounds(394, 527, 200, 40);
         btn3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[0]);  

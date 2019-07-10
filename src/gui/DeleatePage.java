@@ -20,16 +20,16 @@ public class DeleatePage extends JPanel {
         this.setLayout(null);
         this.setSize(1000, 1000);
         JLabel paneltitle = new JLabel("単語削除");
-        paneltitle.setBounds(200, 5, 400,40);
+        paneltitle.setBounds(260, 5, 400, 40);
         this.add(paneltitle);
         
         
         JLabel paneltext = new JLabel("単語");
-        paneltext.setBounds(30,10,400,100);
+        paneltext.setBounds(70,50,50,40);
         this.add(paneltext);
         
         
-        text1.setBounds(100,50,280,25);
+        text1.setBounds(130,50,100,40);
         
         
         btn.setBounds(394, 527, 200, 40);

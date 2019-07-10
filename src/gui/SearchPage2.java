@@ -29,27 +29,27 @@ public class SearchPage2 extends JPanel {
          
          //「単語」表示
          JLabel wordslabel = new JLabel("単語");
-         wordslabel.setBounds(30,50,50,40);
+         wordslabel.setBounds(70,50,50,40);
          this.add(wordslabel);
          
          //テキストボックス単語
          JTextField wordstext = new JTextField(1);
-         wordstext.setBounds(80,50,100,40);
+         wordstext.setBounds(130,50,100,40);
          this.add(wordstext);
          
        //「カテゴリ」表示
          JLabel categorylabel = new JLabel("カテゴリ");
-         categorylabel.setBounds(240,50,80,40);
+         categorylabel.setBounds(280,50,80,40);
          this.add(categorylabel);
          
          //テキストボックスカテゴリ
          JTextField category = new JTextField(1);
-         category.setBounds(320,50,100,40);
+         category.setBounds(350,50,100,40);
          this.add(category);
          
          //単語説明
          JTextField setumei = new JTextField(5);
-         setumei.setBounds(120,100,250,200);
+         setumei.setBounds(100,150,380,200);
          this.add(setumei);
          
          

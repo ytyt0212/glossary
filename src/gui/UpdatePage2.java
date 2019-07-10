@@ -24,7 +24,7 @@ public class UpdatePage2 extends JPanel {
     	this.setSize(1000,1000);
 		
 		JLabel paneltitle = new JLabel("検索結果");
-        paneltitle.setBounds(250, 5, 200, 100);
+        paneltitle.setBounds(260, 5, 400, 40);
         this.add(paneltitle);
         
         btn1.setBounds(394, 527, 200, 40);
@@ -46,7 +46,7 @@ public class UpdatePage2 extends JPanel {
         });
         this.add(btn2);
         
-        btn3.setBounds(400,350,200,40);
+        btn3.setBounds(190,350,200,40);
         
         this.add(btn3);
         
@@ -60,7 +60,7 @@ public class UpdatePage2 extends JPanel {
         this.add(wordstext);
         
         JTextField words = new JTextField(20);
-        words.setBounds(100,100,150,25);
+        words.setBounds(130,93,100,40);
         this.add(words);
         
         //Float f = (float) Math.random();

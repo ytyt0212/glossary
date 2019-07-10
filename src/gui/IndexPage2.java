@@ -19,7 +19,7 @@ public class IndexPage2 extends JPanel {
         this.setLayout(null);
         this.setSize(1000, 1000);
         JLabel paneltitle = new JLabel("索引検索結果");
-        paneltitle.setBounds(200, 5, 400, 40);
+        paneltitle.setBounds(250, 5, 400, 40);
         this.add(paneltitle);
         
   

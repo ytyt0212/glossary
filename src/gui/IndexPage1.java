@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JComboBox;
  
 public class IndexPage1 extends JPanel {
     JButton btn1,btn2;
@@ -18,16 +19,21 @@ public class IndexPage1 extends JPanel {
         this.setName(s);
         this.setLayout(null);
         this.setSize(1000, 1000);
-        JLabel paneltitle = new JLabel("索引");
-        paneltitle.setBounds(0, 5, 400, 40);
+        JLabel paneltitle = new JLabel("50音を入力してください");
+        paneltitle.setBounds(200, 5, 400, 40);
         this.add(paneltitle);
         
         JLabel paneltext = new JLabel("索引");
-        paneltext.setBounds(30,10,400,100);
+        paneltext.setBounds(180,150,400,100);
         this.add(paneltext);
         
+       String[] categorydata = {"ア行","カ行", "サ行","タ行","ナ行","ハ行","マ行","ヤ行","ラ行","ワ行"};
+       JComboBox category = new  JComboBox(categorydata);
+       category.setBounds(300,170,150,55);
+       this.add(category);
+        
         btn1 = new JButton("実行");  
-        btn1.setBounds(170, 300,200, 50); 
+        btn1.setBounds(185, 520,200, 40); 
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[6]);   

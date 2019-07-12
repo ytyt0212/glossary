@@ -12,10 +12,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
  
 public class SearchPage1 extends JPanel {
-    JButton btn1 = new JButton("メインページへ");
-    JButton btn2 = new JButton("検索");
+    static JButton btn1 = new JButton("メインページへ");
+    static JButton btn2 = new JButton("検索");
     MainPage mf;
     String str;
+    static String searchWord;
     public SearchPage1(MainPage m,String s) {
         mf = m;
         str = s;
@@ -36,6 +37,9 @@ public class SearchPage1 extends JPanel {
         //テキストボックス「単語」
         JTextField wordstext = new JTextField(1);
         wordstext.setBounds(330,100,100,40);
+
+        	
+        
         this.add(wordstext);
         
         //プルダウンメニュー横に「カテゴリ」表示
@@ -53,7 +57,8 @@ public class SearchPage1 extends JPanel {
         //検索画面遷移
         btn2.setBounds(195, 320,200, 40);       
         btn2.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e){   
+            	searchWord = wordstext.getText();
                 pc_result();
             }
         });

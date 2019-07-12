@@ -43,14 +43,14 @@ public class Sql {
 			} else if (sqlStr.contains("select cateogy_name")) {
 				return sqlCategory;
 			} else {
-				return "error";
+				return "参照できません";
 			}
 
 		} catch (ClassNotFoundException e) {
-			return "error";
+			return "error" + e;
 
 		} catch (Exception e) {
-			return "error";
+			return "error" + e;
 
 		}
 	}

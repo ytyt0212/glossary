@@ -1,7 +1,9 @@
 package gui;
 
 
-	import java.awt.event.ActionEvent;
+	import java.awt.Font;
+import java.awt.event.ActionEvent;
+	
 
 	import java.awt.event.ActionListener;
 	 
@@ -24,6 +26,7 @@ package gui;
 	        
 	        JLabel paneltitle = new JLabel("単語更新");
 	        paneltitle.setBounds(260, 5, 400, 40);
+	        paneltitle.setFont(new Font("ＭＳ ゴシック", Font.BOLD, 20));
 	        this.add(paneltitle);
 	        
 	        JLabel tango = new JLabel("単語");

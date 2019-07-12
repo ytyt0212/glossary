@@ -56,7 +56,7 @@ public class UpdatePage2 extends JPanel {
         category.setBounds(300,100,150,25);
         this.add(category);
         
-        JTextArea wordstext = new JTextArea(20,10);
+        JTextArea wordstext = new JTextArea(10,20);
         wordstext.setBounds(55,200,450,130);
         wordstext.setLineWrap(true);
         this.add(wordstext);

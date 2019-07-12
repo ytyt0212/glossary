@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class UpdatePage2 extends JPanel {
@@ -55,8 +56,9 @@ public class UpdatePage2 extends JPanel {
         category.setBounds(300,100,150,25);
         this.add(category);
         
-        JTextField wordstext = new JTextField(200);
+        JTextArea wordstext = new JTextArea(20,10);
         wordstext.setBounds(55,200,450,130);
+        wordstext.setLineWrap(true);
         this.add(wordstext);
         
         JTextField words = new JTextField(20);

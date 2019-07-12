@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
  
@@ -48,9 +49,10 @@ public class InsertPage extends JPanel {
         this.add(category);
         
 
-        //テキストボックス「説明」
-        JTextField meantext = new JTextField(200);
+        //テキストエリア「説明」
+        JTextArea meantext = new JTextArea(20,10);
         meantext.setBounds(100,150,380,200);
+        meantext.setLineWrap(true);
         this.add(meantext);
         
         //ボタン「登録」

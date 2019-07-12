@@ -22,12 +22,14 @@ public class Sql {
 
 			rs = stmt.executeQuery(sqlStr);
 
-			if (sqlStr.contains("select words")) {
-				sqlwords = rs.getString("words");
-			} else if (sqlStr.contains("select text")) {
-				sqltext = rs.getString("text");
-			} else if (sqlStr.contains("select category_name")) {
-				sqlCategory = rs.getString("category_name");
+			while (rs.next()) {
+				if (sqlStr.contains("select words")) {
+					sqlwords = rs.getString("words");
+				} else if (sqlStr.contains("select text")) {
+					sqltext = rs.getString("text");
+				} else if (sqlStr.contains("select category_name")) {
+					sqlCategory = rs.getString("category_name");
+				}
 			}
 
 			rs.close();

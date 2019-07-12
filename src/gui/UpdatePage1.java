@@ -22,12 +22,12 @@ package gui;
 	        this.setLayout(null);
 	        this.setSize(1000,1000);
 	        
-	        JLabel paneltitle = new JLabel("更新");
-	        paneltitle.setBounds(275, 5, 200, 100);
+	        JLabel paneltitle = new JLabel("単語更新");
+	        paneltitle.setBounds(260, 5, 400, 40);
 	        this.add(paneltitle);
 	        
 	        JLabel tango = new JLabel("単語");
-	        tango.setBounds(225,100,150,25);
+	        tango.setBounds(70,50,50,40);
 	        this.add(tango);
 	        
 	        btn.setBounds(394, 527, 200, 40);
@@ -50,7 +50,7 @@ package gui;
 	        this.add(btn2);
 	        
 	        JTextField words = new JTextField(20);
-	        words.setBounds(300,100,150,25);
+	        words.setBounds(130,50,100,40);
 	        this.add(words);
 	        
 	        

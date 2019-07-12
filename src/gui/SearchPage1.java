@@ -30,28 +30,28 @@ public class SearchPage1 extends JPanel {
         
         //テキストボックス横に「単語」表示
         JLabel wordslabel = new JLabel("単語");
-        wordslabel.setBounds(200,50,50,40);
+        wordslabel.setBounds(200,100,50,40);
         this.add(wordslabel);
         
         //テキストボックス「単語」
         JTextField wordstext = new JTextField(1);
-        wordstext.setBounds(250,50,100,40);
+        wordstext.setBounds(330,100,100,40);
         this.add(wordstext);
         
         //プルダウンメニュー横に「カテゴリ」表示
         JLabel categorylabel = new JLabel("カテゴリ");
-        categorylabel.setBounds(180,150,80,40);
+        categorylabel.setBounds(180,200,80,40);
         this.add(categorylabel);
         
         //プルダウンメニュー「カテゴリ」
         String []  categorydata = {"テクノロジ","マネジメント","ストラテジ"};
         JComboBox category = new JComboBox(categorydata);
-        category.setBounds(250,150,100,40);
+        category.setBounds(330,200,100,40);
         this.add(category);
         		
         
         //検索画面遷移
-        btn2.setBounds(195, 527,200, 40);       
+        btn2.setBounds(195, 320,200, 40);       
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc_result();

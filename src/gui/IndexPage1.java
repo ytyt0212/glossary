@@ -20,7 +20,7 @@ public class IndexPage1 extends JPanel {
         this.setLayout(null);
         this.setSize(1000, 1000);
         JLabel paneltitle = new JLabel("50音を入力してください");
-        paneltitle.setBounds(200, 5, 400, 40);
+        paneltitle.setBounds(220, 5, 400, 40);
         this.add(paneltitle);
         
         JLabel paneltext = new JLabel("索引");
@@ -33,7 +33,7 @@ public class IndexPage1 extends JPanel {
        this.add(category);
         
         btn1 = new JButton("実行");  
-        btn1.setBounds(195, 527,200, 40); 
+        btn1.setBounds(195, 330,200, 40); 
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 pc(mf.PanelNames[8]);   

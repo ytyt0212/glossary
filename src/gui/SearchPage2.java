@@ -16,11 +16,13 @@ public class SearchPage2 extends JPanel {
 	JButton btn3 = new JButton("単語更新");
 	MainPage mf;
     String str;
+    JTextField wordstext;
+    Sql search = new Sql();
     
     public SearchPage2(MainPage m,String s) {
     	mf = m;
     	str = s;
-    	Sql search = new Sql();
+    	
     	this.setName(s);
     	this.setLayout(null);
     	this.setSize(1000,1000);
@@ -36,18 +38,9 @@ public class SearchPage2 extends JPanel {
          this.add(wordslabel);
          
          //テキストボックス単語
-         StringBuilder s1 = new StringBuilder();
-         s1.append("select words from glossary where words ='");
-         s1.append(SearchPage1.searchWord);
-         s1.append("'");
-         String s2 = s1.toString();
-         JTextField wordstext = new JTextField(1);
-         SearchPage1.btn2.addActionListener(new ActionListener(){
-             public void actionPerformed(ActionEvent e){       	
-                wordstext.setText(search.sql(s2)); 
-                System.out.println(s2);
-             }
-         });
+         
+         wordstext = new JTextField(1);
+         
          wordstext.setBounds(130,50,100,40);
       
          this.add(wordstext);
@@ -94,4 +87,13 @@ public class SearchPage2 extends JPanel {
     public void pc_main() {
     	mf.PanelChange((JPanel)this, mf.PanelNames[0]);
    }
+    public void select_sql() {
+    	StringBuilder s1 = new StringBuilder();
+        s1.append("select words from glossary where words ='");
+        s1.append(SearchPage1.searchWord);
+        s1.append("'");
+        String s2 = s1.toString();
+        wordstext.setText(search.sql(s2)); 
+        System.out.println(s2);
+        }
 }

@@ -88,6 +88,7 @@ public class MainPage extends JFrame {
 			sp3.setVisible(true);
 		} else if (str == PanelNames[4]) {
 			sp4.setVisible(true);
+			sp4.select_sql();
 		} else if (str == PanelNames[5]) {
 			sp5.setVisible(true);
 		} else if (str == PanelNames[6]) {

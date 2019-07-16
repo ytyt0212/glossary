@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+
 public class Sql {
 	String sqlwords = null;
 	String sqltext = null;
@@ -17,10 +18,18 @@ public class Sql {
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/oop?serverTimezone=JST", "root",
 					"root");
 			Statement stmt = con.createStatement();
-
+			int cnt ;
 			ResultSet rs = null;
-
-			rs = stmt.executeQuery(sqlStr);
+			if (sqlStr.contains("select")) {
+				rs = stmt.executeQuery(sqlStr);
+			}else if(sqlStr.contains("update")) {
+				try {
+				cnt = stmt.executeUpdate(sqlStr);
+				con.commit();
+				}catch(Exception e) {
+					con.rollback();
+				}
+			}
 
 			while (rs.next()) {
 				if (sqlStr.contains("select words")) {
@@ -42,6 +51,8 @@ public class Sql {
 				return sqltext;
 			} else if (sqlStr.contains("select category_name")) {
 				return sqlCategory;
+			} else if (sqlStr.contains("update")) {
+				return null;
 			} else {
 				return "参照できません";
 			}

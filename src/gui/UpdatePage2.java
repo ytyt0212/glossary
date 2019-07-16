@@ -1,9 +1,6 @@
 package gui;
 
 import java.awt.event.ActionEvent;
-
-
-import sql.Sql;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -13,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import sql.Sql;
+
 public class UpdatePage2 extends JPanel {
 	JButton btn1 = new JButton("メインページへ");
 	JButton btn2 = new JButton("戻る");
@@ -21,6 +20,7 @@ public class UpdatePage2 extends JPanel {
 	String str;
 	JTextArea wordstext;
 	JTextField words;
+	JComboBox category;
     Sql sql = new Sql();
 
 	public UpdatePage2(MainPage m,String s) {
@@ -54,11 +54,34 @@ public class UpdatePage2 extends JPanel {
         this.add(btn2);
         
         btn3.setBounds(190,350,200,40);
-        
+        btn3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+        		
+        		int c_id ;
+        		c_id = category.getSelectedIndex()+1;
+        		StringBuilder u1 = new StringBuilder();
+            	u1.append("update glossary set text ='");
+                u1.append(wordstext.getText());
+                u1.append("',category_id = '");
+                u1.append(c_id);
+                u1.append("'");
+                u1.append(" where words ='");
+                u1.append(words.getText());
+                u1.append("'");
+                String u2 = u1.toString();
+                System.out.println(u2);
+                sql.sql(u2);
+        		
+			}
+
+
+        });
+       
+        	
         this.add(btn3);
         
         String []  categorydata = {"テクノロジ","マネジメント","ストラテジ"};
-        JComboBox category = new JComboBox(categorydata);
+        category = new JComboBox(categorydata);
         category.setBounds(300,100,150,25);
         this.add(category);
         //説明文

@@ -1,11 +1,13 @@
 package gui;
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
-import javax.swing.JTextField;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import sql.Sql;
  
 public class DeleatePage extends JPanel {
     JButton btn = new JButton("メインページへ"); 
@@ -13,6 +15,7 @@ public class DeleatePage extends JPanel {
     JTextField text1 = new JTextField(20);
     MainPage mf;
     String str;
+    Sql sql = new Sql();
     public DeleatePage(MainPage m,String s){
         mf = m;
         str = s;
@@ -32,10 +35,26 @@ public class DeleatePage extends JPanel {
         text1.setBounds(130,50,100,40);
         
         
+        
         btn.setBounds(394, 527, 200, 40);
         btn2.setBounds(190,200,200,40);
+        btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+        		
+        		
+        		StringBuilder d1 = new StringBuilder();
+            	d1.append("delete from glossary where words ='");
+            	d1.append(text1.getText());
+            	d1.append("'");
+                String d2 = d1.toString();
+                System.out.println(d2);
+                sql.sql(d2);
+			}
+        });
+        
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+            	
                 pc();
             }
         });

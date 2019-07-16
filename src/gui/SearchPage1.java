@@ -16,6 +16,7 @@ public class SearchPage1 extends JPanel {
     static JButton btn2 = new JButton("検索");
     MainPage mf;
     String str;
+    JTextField wordstext;
     static String searchWord;
     public SearchPage1(MainPage m,String s) {
         mf = m;
@@ -35,11 +36,8 @@ public class SearchPage1 extends JPanel {
         this.add(wordslabel);
         
         //テキストボックス「単語」
-        JTextField wordstext = new JTextField(1);
-        wordstext.setBounds(330,100,100,40);
-
-        	
-        
+        wordstext = new JTextField(1);
+        wordstext.setBounds(330,100,100,40);       
         this.add(wordstext);
         
         //プルダウンメニュー横に「カテゴリ」表示
@@ -83,5 +81,8 @@ public class SearchPage1 extends JPanel {
     }
     public void pc_result(){
         mf.PanelChange((JPanel)this, mf.PanelNames[4]);//MainPanel�ɖ߂�
+    }
+    public void resetText() {
+    	wordstext.setText("");
     }
 }

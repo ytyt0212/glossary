@@ -17,6 +17,8 @@ import java.awt.event.ActionEvent;
 	    JButton btn2 = new JButton("検索");
 	    MainPage mf;
 	    String str;
+	    static String updateWord;
+	    JTextField words;
 	    public UpdatePage1(MainPage m,String s){
 	        mf = m;
 	        str = s;
@@ -45,6 +47,7 @@ import java.awt.event.ActionEvent;
 	        btn2.setBounds(190,200,200,40);
 	        btn2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
+					updateWord = words.getText();
 	        		pc(mf.PanelNames[6]);
 				}
 
@@ -52,7 +55,7 @@ import java.awt.event.ActionEvent;
 	        });
 	        this.add(btn2);
 	        
-	        JTextField words = new JTextField(20);
+	        words = new JTextField(20);
 	        words.setBounds(130,50,100,40);
 	        this.add(words);
 	        
@@ -62,6 +65,9 @@ import java.awt.event.ActionEvent;
 	    
 	    public void pc(String str){
 	        mf.PanelChange((JPanel)this, str);//MainPanelに戻る
+	    }
+	    public void resetText() {
+	    	words.setText("");
 	    }
 	}
 	

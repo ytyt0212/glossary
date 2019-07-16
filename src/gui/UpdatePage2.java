@@ -1,6 +1,9 @@
 package gui;
 
 import java.awt.event.ActionEvent;
+
+
+import sql.Sql;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -16,7 +19,10 @@ public class UpdatePage2 extends JPanel {
 	JButton btn3 = new JButton("更新");
 	MainPage mf;
 	String str;
-	
+	JTextArea wordstext;
+	JTextField words;
+    Sql sql = new Sql();
+
 	public UpdatePage2(MainPage m,String s) {
 		mf = m;
 		str = s;
@@ -55,13 +61,13 @@ public class UpdatePage2 extends JPanel {
         JComboBox category = new JComboBox(categorydata);
         category.setBounds(300,100,150,25);
         this.add(category);
-        
-        JTextArea wordstext = new JTextArea(10,20);
+        //説明文
+        wordstext = new JTextArea(10,20);
         wordstext.setBounds(55,200,450,130);
         wordstext.setLineWrap(true);
         this.add(wordstext);
-        
-        JTextField words = new JTextField(20);
+        //単語
+        words = new JTextField(20);
         words.setBounds(130,93,100,40);
         this.add(words);
         
@@ -74,6 +80,18 @@ public class UpdatePage2 extends JPanel {
         mf.PanelChange((JPanel)this, str);//MainPanelに戻る
     
 	}
+    
+    public void search_sql() {
+    	//単語参照SQL文
+    	StringBuilder s1 = new StringBuilder();
+    	s1.append("select words from glossary where words ='");
+        s1.append(UpdatePage1.updateWord);
+        s1.append("'");
+        String s2 = s1.toString();
+        
+        //単語のセット
+        words.setText(sql.sql(s2));
+    }
 }
 
 

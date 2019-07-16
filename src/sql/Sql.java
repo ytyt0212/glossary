@@ -14,7 +14,7 @@ public class Sql {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/oop?serverTimezone=JST", "root",
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/oop?serverTimezone=JST", "root",
 					"root");
 			Statement stmt = con.createStatement();
 
@@ -40,7 +40,7 @@ public class Sql {
 				return sqlwords;
 			} else if (sqlStr.contains("select text")) {
 				return sqltext;
-			} else if (sqlStr.contains("select cateogy_name")) {
+			} else if (sqlStr.contains("select category_name")) {
 				return sqlCategory;
 			} else {
 				return "参照できません";

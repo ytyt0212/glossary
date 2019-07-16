@@ -22,7 +22,7 @@ public class Sql {
 			ResultSet rs = null;
 			if (sqlStr.contains("select")) {
 				rs = stmt.executeQuery(sqlStr);
-			}else if(sqlStr.contains("update")) {
+			}else if(sqlStr.contains("update") || sqlStr.contains("insert") || sqlStr.contains("delete")) {
 				try {
 				cnt = stmt.executeUpdate(sqlStr);
 				con.commit();

@@ -48,6 +48,20 @@ public class InsertPage extends JPanel {
         category.setBounds(350,50,100,40);
         this.add(category);
         
+        
+        //プルダウンメニュー「ア」
+        String []  categorydata2= {"ア","カ","サ","タ","ナ","ハ","マ","ヤ","ラ","ワ"};
+        JComboBox category2 = new JComboBox(categorydata2);
+        category2.setBounds(400,100,50,40);
+        this.add(category2);
+        
+        //プルダウンメニュー「ア」の横に「行」の表示
+        JLabel tango2 = new JLabel("行");
+        tango2.setBounds(460,100,50,40);
+        this.add(tango2);
+        
+        
+        
 
         //テキストエリア「説明」
         JTextArea meantext = new JTextArea(20,10);

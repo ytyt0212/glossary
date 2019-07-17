@@ -27,10 +27,16 @@ public class IndexPage1 extends JPanel {
         paneltext.setBounds(180,150,400,100);
         this.add(paneltext);
         
-       String[] categorydata = {"ア行","カ行", "サ行","タ行","ナ行","ハ行","マ行","ヤ行","ラ行","ワ行"};
+       String[] categorydata = {"ア","カ", "サ","タ","ナ","ハ","マ","ヤ","ラ","ワ"};
        JComboBox category = new  JComboBox(categorydata);
-       category.setBounds(300,170,150,55);
+       category.setBounds(310,180,50,40);
        this.add(category);
+       
+       
+       //プルダウンメニュー「ア」の横に「行」の表示
+       JLabel tango2 = new JLabel("行");
+       tango2.setBounds(380,180,50,40);
+       this.add(tango2);
         
         btn1 = new JButton("実行");  
         btn1.setBounds(195, 330,200, 40); 

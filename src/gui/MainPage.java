@@ -55,7 +55,7 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[1]) {
 			sp = (SearchPage1) jp;
 			sp.setVisible(false);
-			sp.resetText();
+			
 		} else if (name == PanelNames[2]) {
 			sp2 = (InsertPage) jp;
 			sp2.setVisible(false);
@@ -65,6 +65,7 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[4]) {
 			sp4 = (SearchPage2) jp;
 			sp4.setVisible(false);
+			sp.resetText();
 		} else if (name == PanelNames[5]) {
 			sp5 = (UpdatePage1) jp;
 			sp5.setVisible(false);

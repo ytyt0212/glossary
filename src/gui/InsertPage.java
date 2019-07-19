@@ -6,15 +6,22 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+import sql.Sql;
+
  
 public class InsertPage extends JPanel {
     JButton btn = new JButton("メインページへ");  
+    JComboBox category2;
+    JTextField wordstext ;
+    JTextArea meantext ;
     MainPage mf;
     String str;
+    Sql insert = new Sql();
     
     
     public InsertPage(MainPage m,String s){
@@ -33,7 +40,7 @@ public class InsertPage extends JPanel {
         JTextField text1 = new JTextField (20);
         
         //テキストボックス「単語」
-        JTextField wordstext = new JTextField(20);
+        wordstext = new JTextField(20);
         wordstext.setBounds(130,50,100,40);
         this.add(wordstext);
         
@@ -51,7 +58,7 @@ public class InsertPage extends JPanel {
         
         //プルダウンメニュー「ア」
         String []  categorydata2= {"ア","カ","サ","タ","ナ","ハ","マ","ヤ","ラ","ワ"};
-        JComboBox category2 = new JComboBox(categorydata2);
+        category2 = new JComboBox(categorydata2);
         category2.setBounds(400,100,50,40);
         this.add(category2);
         
@@ -64,7 +71,7 @@ public class InsertPage extends JPanel {
         
 
         //テキストエリア「説明」
-        JTextArea meantext = new JTextArea(20,10);
+        meantext = new JTextArea(20,10);
         meantext.setBounds(100,150,380,200);
         meantext.setLineWrap(true);
         this.add(meantext);
@@ -72,6 +79,30 @@ public class InsertPage extends JPanel {
         //ボタン「登録」
         JButton btn2 = new JButton("登録");
         btn2.setBounds(195,380,200,40);
+        btn2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String gojuon ;
+				int c_id ;
+				gojuon = (String) category2.getSelectedItem();
+				c_id = category.getSelectedIndex()+1;
+				StringBuilder i1 = new StringBuilder();
+				i1.append("insert into glossary(words,text,category_id,50on) values('");
+				i1.append(wordstext.getText());
+				i1.append("','");
+				i1.append(meantext.getText());
+				i1.append("','");
+				i1.append(c_id);
+				i1.append("','");
+				i1.append(gojuon);
+				i1.append("')");
+				String i2 = i1.toString();
+				System.out.println(i2);
+				insert.sql(i2);
+				JOptionPane.showMessageDialog(null, "登録しました");
+				pc();
+       
+			}
+        });
         this.add(btn2);
         
         
@@ -91,5 +122,8 @@ public class InsertPage extends JPanel {
     public void pc(){
         mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel�ɖ߂�
     }
+    
+    	
+    
 }
 

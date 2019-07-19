@@ -5,9 +5,9 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JOptionPane;
 
 import sql.Sql;
 
@@ -116,9 +116,9 @@ public class SearchPage2 extends JPanel {
         wordstext.setText(search.sql(s2)); 
         setumei.setText(search.sql(t2));
         category.setText(search.sql(c2));
-        
+        if(search.sql(c2) == null) {
         JOptionPane.showMessageDialog(null, "単語が見つかりません","エラー",JOptionPane.ERROR_MESSAGE);
-      
+        }
         
         System.out.println(search.sql(s2));
         System.out.println(search.sql(t2));

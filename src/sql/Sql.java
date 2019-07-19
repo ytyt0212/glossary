@@ -15,7 +15,7 @@ public class Sql {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/oop?serverTimezone=JST", "root",
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/oop?serverTimezone=JST", "root",
 					"root");
 			Statement stmt = con.createStatement();
 			int cnt ;
@@ -53,6 +53,8 @@ public class Sql {
 				return sqlCategory;
 			} else if (sqlStr.contains("update")) {
 				return null;
+			}else if (sqlStr.contains("insert")) {
+				return "登録しました";
 			} else {
 				return "参照できません";
 			}

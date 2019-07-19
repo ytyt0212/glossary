@@ -49,8 +49,6 @@ public class UpdatePage2 extends JPanel {
 			public void actionPerformed(ActionEvent e) {
         		pc(mf.PanelNames[5]);
 			}
-
-
         });
         this.add(btn2);
         
@@ -72,6 +70,8 @@ public class UpdatePage2 extends JPanel {
                 String u2 = u1.toString();
                 System.out.println(u2);
                 sql.sql(u2);
+                JOptionPane.showMessageDialog(null,"更新しました ");
+                pc(mf.PanelNames[0]);
         		
 			}
 

@@ -52,7 +52,7 @@ public class Sql {
 			} else if (sqlStr.contains("select category_name")) {
 				return sqlCategory;
 			} else if (sqlStr.contains("update")) {
-				return null;
+				return "更新しました";
 			}else if (sqlStr.contains("insert")) {
 				return "登録しました";
 			} else {

@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -49,6 +50,8 @@ public class DeleatePage extends JPanel {
                 String d2 = d1.toString();
                 System.out.println(d2);
                 sql.sql(d2);
+                JOptionPane.showMessageDialog(null, "削除しました");
+                pc();
 			}
         });
         

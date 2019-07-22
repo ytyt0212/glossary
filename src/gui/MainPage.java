@@ -59,6 +59,7 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[2]) {
 			sp2 = (InsertPage) jp;
 			sp2.setVisible(false);
+			sp2.resetText();
 		} else if (name == PanelNames[3]) {
 			sp3 = (DeleatePage) jp;
 			sp3.setVisible(false);
@@ -72,7 +73,8 @@ public class MainPage extends JFrame {
 			sp5.resetText();
 		} else if (name == PanelNames[6]) {
 			sp6 = (UpdatePage2) jp;
-			sp6.setVisible(false);		
+			sp6.setVisible(false);
+			sp6.resetText();
 	    } else if (name == PanelNames[7]) {
 			 sp7 = (IndexPage1) jp;
 			 sp7.setVisible(false);

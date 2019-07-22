@@ -19,6 +19,7 @@ public class InsertPage extends JPanel {
     JComboBox category2;
     JTextField wordstext ;
     JTextArea meantext ;
+    
     MainPage mf;
     String str;
     Sql insert = new Sql();
@@ -122,7 +123,10 @@ public class InsertPage extends JPanel {
     public void pc(){
         mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel�ɖ߂�
     }
-    
+    public void resetText() {
+    	wordstext.setText("");
+    	meantext.setText("");
+    }
     	
     
 }

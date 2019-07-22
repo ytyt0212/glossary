@@ -120,6 +120,11 @@ public class UpdatePage2 extends JPanel {
         pc("mp");
         }
     }
+    public void resetText() {
+    	wordstext.setText("");
+    	words.setText("");
+    	
+    }
 }
 
 

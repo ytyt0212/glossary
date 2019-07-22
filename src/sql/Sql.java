@@ -10,6 +10,7 @@ public class Sql {
 	String sqlwords = null;
 	String sqltext = null;
 	String sqlCategory = null;
+	int count;
 
 	public String sql(String sqlStr) {
 		try {
@@ -21,6 +22,9 @@ public class Sql {
 			int cnt ;
 			ResultSet rs = null;
 			if (sqlStr.contains("select")) {
+				sqlwords = null;
+				sqltext = null;
+				sqlCategory = null;
 				rs = stmt.executeQuery(sqlStr);
 			}else if(sqlStr.contains("update") || sqlStr.contains("insert") || sqlStr.contains("delete")) {
 				try {
@@ -32,21 +36,24 @@ public class Sql {
 			}
 
 			while (rs.next()) {
-				if (sqlStr.contains("select words")) {
+				count =0;
+				if (sqlStr.contains("select words") && rs != null) {
 					sqlwords = rs.getString("words");
-				} else if (sqlStr.contains("select text")) {
+				} else if (sqlStr.contains("select text") && rs != null) {
 					sqltext = rs.getString("text");
-				} else if (sqlStr.contains("select category_name")) {
+				} else if (sqlStr.contains("select category_name") && rs != null) {
 					sqlCategory = rs.getString("category_name");
 				}
+				count++;
 			}
+			
 
 			rs.close();
 			stmt.close();
 			con.close();
 
 			if (sqlStr.contains("select words")) {
-				return sqlwords;
+				return sqlwords;				
 			} else if (sqlStr.contains("select text")) {
 				return sqltext;
 			} else if (sqlStr.contains("select category_name")) {
@@ -56,7 +63,7 @@ public class Sql {
 			}else if (sqlStr.contains("insert")) {
 				return "登録しました";
 			} else {
-				return "参照できません";
+				return null;
 			}
 
 		} catch (ClassNotFoundException e) {

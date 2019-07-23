@@ -81,6 +81,8 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[8]) {
 			 sp8 = (IndexPage2) jp;
 			 sp8.setVisible(false);
+			 sp8.resetText();
+
 		}
 
 		if (str == PanelNames[0]) {
@@ -103,6 +105,7 @@ public class MainPage extends JFrame {
 			 sp7.setVisible(true);
 		}else if (str == PanelNames[8]) {
 			sp8.setVisible(true);
+			sp8.select_sql2();
 		}
 	}
 }	

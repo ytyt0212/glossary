@@ -99,7 +99,7 @@ public class InsertPage extends JPanel {
 				String i2 = i1.toString();
 				System.out.println(i2);
 				insert.sql(i2);
-				JOptionPane.showMessageDialog(null, "登録しました");
+				JOptionPane.showMessageDialog(null, insert.sql(i2));
 				pc();
        
 			}

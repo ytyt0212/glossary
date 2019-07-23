@@ -17,7 +17,10 @@ public class IndexPage2 extends JPanel {
     
     MainPage mf;
     String str;
-    JTextArea meantext ;
+    JTextArea words ;
+    JTextArea category;
+    public static List<String> listWord = new ArrayList<String>();
+	public static List<String> listCategory = new ArrayList<String>();
     public IndexPage2(MainPage m,String s){
         mf = m;
         str = s;
@@ -29,10 +32,12 @@ public class IndexPage2 extends JPanel {
         this.add(paneltitle);
         
         //テキストエリア「説明」
-        meantext = new JTextArea(20,10);
-        meantext.setBounds(100,150,380,200);
-        meantext.setLineWrap(true);
-        this.add(meantext);
+        words = new JTextArea(20,10);
+        words.setBounds(50,50,500,400);
+        words.setLineWrap(true);
+        this.add(words);
+        
+       
         
         
 
@@ -53,6 +58,7 @@ public class IndexPage2 extends JPanel {
         btn2.setBounds(195, 527,200, 40);
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+            	
                 pc(mf.PanelNames[7]);  
             }
         });
@@ -73,19 +79,35 @@ public class IndexPage2 extends JPanel {
         mf.PanelChange((JPanel)this, str);  
     }
     public void select_sql2(){
-    	List<String> list = new ArrayList<String>();
-        Sql a = new Sql();
+    	
+        Sql sql = new Sql();
 
         StringBuilder s1 = new StringBuilder();
-        s1.append("select words from glossary where words ='");
+        s1.append("select words from glossary where 50on ='");
         s1.append(IndexPage1.text);
         s1.append("'");
         String s2 = s1.toString();
-        list.add(a.sql(s2));
-        for(int i = 0 ; i < list.size() ; i++ ){
-        	meantext.setText(list.get(i)+"\n");
-            
+        
+        StringBuilder c1 = new StringBuilder();
+        c1.append("select category_name from glossary,category where "
+        		+ "glossary.category_id = category.category_id and 50on='");
+        c1.append(IndexPage1.text);
+        c1.append("'");
+        String c2 = c1.toString();
+        
+        listWord.add(sql.sql(s2));
+        listCategory.add(sql.sql(c2));
+        
+        //結果のセット
+        for(int i = 0 ; i < listWord.size()-1 ; i++ ){
+        	words.append(listWord.get(i)+"   "+listCategory.get(i)+"\n");	
         }
+        
+    }
+    public void resetText() {
+    	listWord = new ArrayList<String>();
+    	listCategory = new ArrayList<String>();
+    	words.setText("");
     }
     	
 }

@@ -1,6 +1,7 @@
 package sql;
 
 import java.sql.Connection;
+import gui.IndexPage2;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -32,6 +33,7 @@ public class Sql {
 				con.commit();
 				}catch(Exception e) {
 					con.rollback();
+					System.out.println(e);
 				}
 			}
 
@@ -39,12 +41,16 @@ public class Sql {
 				count =0;
 				if (sqlStr.contains("select words") && rs != null) {
 					sqlwords = rs.getString("words");
+					IndexPage2.listWord.add(sqlwords);
 				} else if (sqlStr.contains("select text") && rs != null) {
 					sqltext = rs.getString("text");
 				} else if (sqlStr.contains("select category_name") && rs != null) {
 					sqlCategory = rs.getString("category_name");
+					IndexPage2.listCategory.add(sqlCategory);
 				}
 				count++;
+				
+				
 			}
 			
 

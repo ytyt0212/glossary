@@ -19,8 +19,8 @@ public class IndexPage2 extends JPanel {
     String str;
     JTextArea words ;
     JTextArea category;
-    public static List<String> listWord ;
-	public static List<String> listCategory;
+    public static List<String> listWord = new ArrayList<String>();;
+	public static List<String> listCategory = new ArrayList<String>();;
     public IndexPage2(MainPage m,String s){
         mf = m;
         str = s;

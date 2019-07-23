@@ -44,6 +44,7 @@ public class Sql {
 				if (sqlStr.contains("select words") && rs != null) {
 					sqlwords = rs.getString("words");
 					IndexPage2.listWord.add(sqlwords);
+					
 				} else if (sqlStr.contains("select text") && rs != null) {
 					sqltext = rs.getString("text");
 				} else if (sqlStr.contains("select category_name") && rs != null) {

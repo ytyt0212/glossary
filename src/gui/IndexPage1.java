@@ -2,17 +2,20 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
- 
+
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JComboBox;
  
+
 public class IndexPage1 extends JPanel {
     JButton btn1,btn2;
     
     MainPage mf;
     String str;
+    static String text;
+    
     public IndexPage1(MainPage m,String s){
         mf = m;
         str = s;
@@ -32,6 +35,8 @@ public class IndexPage1 extends JPanel {
        category.setBounds(310,180,50,40);
        this.add(category);
        
+      
+       
        
        //プルダウンメニュー「ア」の横に「行」の表示
        JLabel tango2 = new JLabel("行");
@@ -42,6 +47,7 @@ public class IndexPage1 extends JPanel {
         btn1.setBounds(195, 330,200, 40); 
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+            	text=(String) category.getSelectedItem();
                 pc(mf.PanelNames[8]);   
             }
         });

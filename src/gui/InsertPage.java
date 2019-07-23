@@ -17,8 +17,8 @@ import sql.Sql;
 public class InsertPage extends JPanel {
     JButton btn = new JButton("メインページへ");  
     JComboBox category2;
-    JTextField wordstext ;
-    JTextArea meantext ;
+    JTextField wordstext = null ;
+    JTextArea meantext = null ;
     
     MainPage mf;
     String str;
@@ -98,9 +98,15 @@ public class InsertPage extends JPanel {
 				i1.append("')");
 				String i2 = i1.toString();
 				System.out.println(i2);
-				insert.sql(i2);
-				JOptionPane.showMessageDialog(null, insert.sql(i2));
-				pc();
+				if(wordstext.getText().length() == 0) {
+					JOptionPane.showMessageDialog(null, "単語を入力してください");
+				
+				}else {
+					insert.sql(i2);
+					JOptionPane.showMessageDialog(null, "登録しました");
+					pc();
+					
+				}
        
 			}
         });

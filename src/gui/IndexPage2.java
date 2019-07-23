@@ -19,8 +19,8 @@ public class IndexPage2 extends JPanel {
     String str;
     JTextArea words ;
     JTextArea category;
-    public static List<String> listWord = new ArrayList<String>();
-	public static List<String> listCategory = new ArrayList<String>();
+    public static List<String> listWord ;
+	public static List<String> listCategory;
     public IndexPage2(MainPage m,String s){
         mf = m;
         str = s;
@@ -79,7 +79,8 @@ public class IndexPage2 extends JPanel {
         mf.PanelChange((JPanel)this, str);  
     }
     public void select_sql2(){
-    	
+    	listWord = new ArrayList<String>();
+    	listCategory = new ArrayList<String>(); 	
         Sql sql = new Sql();
 
         StringBuilder s1 = new StringBuilder();
@@ -99,14 +100,13 @@ public class IndexPage2 extends JPanel {
         listCategory.add(sql.sql(c2));
         
         //結果のセット
-        for(int i = 0 ; i < listWord.size()-1 ; i++ ){
-        	words.append(listWord.get(i)+"   "+listCategory.get(i)+"\n");	
+        for(int i = 0 ; i < listWord.size()-1 && i < 30; i++ ){
+        	words.append(listWord.get(i)+"\t"+listCategory.get(i)+"\n");	
         }
         
     }
     public void resetText() {
-    	listWord = new ArrayList<String>();
-    	listCategory = new ArrayList<String>();
+    	
     	words.setText("");
     }
     	

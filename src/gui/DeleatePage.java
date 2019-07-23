@@ -50,8 +50,12 @@ public class DeleatePage extends JPanel {
                 String d2 = d1.toString();
                 System.out.println(d2);
                 sql.sql(d2);
+                if(sql.sql(d2) == "削除しました") {
                 JOptionPane.showMessageDialog(null, "削除しました");
                 pc();
+                }else {
+                	JOptionPane.showMessageDialog(null, "削除できませんでした");
+                }
 			}
         });
         

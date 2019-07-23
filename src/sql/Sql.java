@@ -1,10 +1,11 @@
 package sql;
 
 import java.sql.Connection;
-import gui.IndexPage2;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
+import gui.IndexPage2;
 
 
 public class Sql {
@@ -19,6 +20,7 @@ public class Sql {
 
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/oop?serverTimezone=JST", "root",
 					"root");
+			con.setAutoCommit(false);
 			Statement stmt = con.createStatement();
 			int cnt ;
 			ResultSet rs = null;
@@ -68,6 +70,8 @@ public class Sql {
 				return "更新しました";
 			}else if (sqlStr.contains("insert")) {
 				return "登録しました";
+			}else if(sqlStr.contains("delete")) {
+				return "削除しました";
 			} else {
 				return null;
 			}

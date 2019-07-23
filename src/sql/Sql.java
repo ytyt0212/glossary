@@ -35,7 +35,7 @@ public class Sql {
 				con.commit();
 				}catch(Exception e) {
 					con.rollback();
-					System.out.println(e);
+					return "error";
 				}
 			}
 
@@ -44,7 +44,6 @@ public class Sql {
 				if (sqlStr.contains("select words") && rs != null) {
 					sqlwords = rs.getString("words");
 					IndexPage2.listWord.add(sqlwords);
-					
 				} else if (sqlStr.contains("select text") && rs != null) {
 					sqltext = rs.getString("text");
 				} else if (sqlStr.contains("select category_name") && rs != null) {
@@ -72,16 +71,17 @@ public class Sql {
 			}else if (sqlStr.contains("insert")) {
 				return "登録しました";
 			}else if(sqlStr.contains("delete")) {
+				
 				return "削除しました";
 			} else {
-				return null;
+				return "error";
 			}
 
 		} catch (ClassNotFoundException e) {
-			return "error" + e;
+			return "error";
 
 		} catch (Exception e) {
-			return "error" + e;
+			return "error";
 
 		}
 	}

@@ -49,12 +49,22 @@ public class DeleatePage extends JPanel {
             	d1.append("'");
                 String d2 = d1.toString();
                 System.out.println(d2);
-                sql.sql(d2);
-                if(sql.sql(d2) == "削除しました") {
-                JOptionPane.showMessageDialog(null, "削除しました");
-                pc();
-                }else {
+                
+                StringBuilder s1 = new StringBuilder();
+            	s1.append("select words from glossary where words ='");
+            	s1.append(text1.getText());
+            	s1.append("'");
+                String s2 = s1.toString();
+                System.out.println(s2);
+                
+                
+                if(sql.sql(s2) == null) {
                 	JOptionPane.showMessageDialog(null, "削除できませんでした");
+                	resetText();
+                }else {
+                	JOptionPane.showMessageDialog(null, "削除しました");
+                	sql.sql(d2);
+                	pc();
                 }
 			}
         });
@@ -74,6 +84,9 @@ public class DeleatePage extends JPanel {
     }
     public void pc(){
         mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel�ɖ߂�
+    }
+    public void resetText() {
+    	text1.setText("");
     }
 }
 

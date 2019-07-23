@@ -63,6 +63,7 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[3]) {
 			sp3 = (DeleatePage) jp;
 			sp3.setVisible(false);
+			sp3.resetText();
 		} else if (name == PanelNames[4]) {
 			sp4 = (SearchPage2) jp;
 			sp4.setVisible(false);

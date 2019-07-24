@@ -115,6 +115,7 @@ public class UpdatePage2 extends JPanel {
         
         //単語のセット
         words.setText(sql.sql(s2));
+        words.setEditable(false);
         if(sql.sql(s2) == null) {
         JOptionPane.showMessageDialog(null, "単語が見つかりません","エラー",JOptionPane.ERROR_MESSAGE);
         pc("mp");

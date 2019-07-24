@@ -118,6 +118,7 @@ public class SearchPage2 extends JPanel {
         category.setText(search.sql(c2));
         if(search.sql(c2) == null) {
         JOptionPane.showMessageDialog(null, "単語が見つかりません","エラー",JOptionPane.ERROR_MESSAGE);
+        pc_search1();
         }
         
         System.out.println(search.sql(s2));

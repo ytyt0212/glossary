@@ -35,7 +35,7 @@ public class MainPage extends JFrame {
 		this.add(sp8);
 		sp8.setVisible(false);
 
-		this.setBounds(00, 00, 600, 600);
+		this.setBounds(642, 220, 600, 600);
 	}
 
 	public static void main(String[] args) {

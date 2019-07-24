@@ -7,7 +7,6 @@ import java.sql.Statement;
 
 import gui.IndexPage2;
 
-
 public class Sql {
 	String sqlwords = null;
 	String sqltext = null;
@@ -22,25 +21,27 @@ public class Sql {
 					"root");
 			con.setAutoCommit(false);
 			Statement stmt = con.createStatement();
-			int cnt ;
+			int cnt;
 			ResultSet rs = null;
+			// SELECT文の処理
 			if (sqlStr.contains("select")) {
 				sqlwords = null;
 				sqltext = null;
 				sqlCategory = null;
 				rs = stmt.executeQuery(sqlStr);
-			}else if(sqlStr.contains("update") || sqlStr.contains("insert") || sqlStr.contains("delete")) {
+				// UPDATE、INSERT、DELETE文の処理
+			} else if (sqlStr.contains("update") || sqlStr.contains("insert") || sqlStr.contains("delete")) {
 				try {
-				cnt = stmt.executeUpdate(sqlStr);
-				con.commit();
-				}catch(Exception e) {
+					cnt = stmt.executeUpdate(sqlStr);
+					con.commit();
+				} catch (Exception e) {
 					con.rollback();
 					return "error";
 				}
 			}
-
+			// 結果のセット
 			while (rs.next()) {
-				count =0;
+				count = 0;
 				if (sqlStr.contains("select words") && rs != null) {
 					sqlwords = rs.getString("words");
 					IndexPage2.listWord.add(sqlwords);
@@ -51,27 +52,26 @@ public class Sql {
 					IndexPage2.listCategory.add(sqlCategory);
 				}
 				count++;
-				
-				
+
 			}
-			
 
 			rs.close();
 			stmt.close();
 			con.close();
 
+			// 結果の返却
 			if (sqlStr.contains("select words")) {
-				return sqlwords;				
+				return sqlwords;
 			} else if (sqlStr.contains("select text")) {
 				return sqltext;
 			} else if (sqlStr.contains("select category_name")) {
 				return sqlCategory;
 			} else if (sqlStr.contains("update")) {
 				return "更新しました";
-			}else if (sqlStr.contains("insert")) {
+			} else if (sqlStr.contains("insert")) {
 				return "登録しました";
-			}else if(sqlStr.contains("delete")) {
-				
+			} else if (sqlStr.contains("delete")) {
+
 				return "削除しました";
 			} else {
 				return "error";

@@ -38,8 +38,7 @@ public class InsertPage extends JPanel {
         JLabel tango = new JLabel("単語");
         tango.setBounds(70,50,50,40);
         this.add(tango);
-        JTextField text1 = new JTextField (20);
-        
+           
         //テキストボックス「単語」
         words = new JTextField(20);
         words.setBounds(130,50,100,40);
@@ -72,7 +71,7 @@ public class InsertPage extends JPanel {
         
 
         //テキストエリア「説明」
-        wordstext = new JTextArea(20,10);
+		wordstext = new JTextArea(20,10);
         wordstext.setBounds(100,150,380,200);
         wordstext.setLineWrap(true);
         this.add(wordstext);
@@ -99,37 +98,37 @@ public class InsertPage extends JPanel {
 				String i2 = i1.toString();
 				System.out.println(i2);
 				if(words.getText().length() == 0) {
+					//単語が入力されていなかった場合
 					JOptionPane.showMessageDialog(null, "単語を入力してください");
-				
+				}else if(wordstext.getText().length() == 0) {
+					//説明文が入力されていなかった場合
+					JOptionPane.showMessageDialog(null, "説明文を入力してください");				
 				}else {
+					//SQLの起動、登録処理
 					insert.sql(i2);
 					JOptionPane.showMessageDialog(null, "登録しました");
-					pc();
-					
+					pc();					
 				}
-       
 			}
-        });
-        this.add(btn2);
-        
-        
-        this.add(text1);
-        this.add(paneltitle);
+        });       
+    
         btn.setBounds(394, 527, 200, 40);
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+            	//メインページへ戻る
                 pc();
             }
         });
         this.add(btn);
-       
-        //Float f = (float) Math.random();
-        //this.setBackground(Color.getHSBColor(f, 0.5f, 0.8f));
+        this.add(btn2);          
+        this.add(paneltitle);
+      
     }
     public void pc(){
         mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel�ɖ߂�
     }
     public void resetText() {
+    	//テキストエリアのリセット
     	words.setText("");
     	wordstext.setText("");
     }

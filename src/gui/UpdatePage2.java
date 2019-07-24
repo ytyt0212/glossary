@@ -31,31 +31,34 @@ public class UpdatePage2 extends JPanel {
     	this.setLayout(null);
     	this.setSize(1000,1000);
 		
+    	//ラベル検索結果
 		JLabel paneltitle = new JLabel("検索結果");
         paneltitle.setBounds(260, 5, 400, 40);
-        this.add(paneltitle);
-        
+        this.add(paneltitle);   
         btn1.setBounds(394, 527, 200, 40);
         btn1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+            	//メインページへ戻る
                 pc(mf.PanelNames[0]);
             }
         });
         this.add(btn1);
         
-       
+        //戻るボタン
         btn2.setBounds(195, 527,200, 40);
         btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//UpdatePage1へ戻る
         		pc(mf.PanelNames[5]);
 			}
         });
         this.add(btn2);
         
+        //更新ボタン
         btn3.setBounds(190,350,200,40);
         btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-        		
+        		//更新のSQL文の組み立て、SQLの起動
         		int c_id ;
         		c_id = category.getSelectedIndex()+1;
         		StringBuilder u1 = new StringBuilder();
@@ -76,11 +79,10 @@ public class UpdatePage2 extends JPanel {
 			}
 
 
-        });
-       
-        	
+        });        	
         this.add(btn3);
         
+        //カテゴリープルダウンメニュー
         String []  categorydata = {"テクノロジ","マネジメント","ストラテジ"};
         category = new JComboBox(categorydata);
         category.setBounds(300,100,150,25);
@@ -93,10 +95,7 @@ public class UpdatePage2 extends JPanel {
         //単語
         words = new JTextField(20);
         words.setBounds(130,93,100,40);
-        this.add(words);
-        
-        //Float f = (float) Math.random();
-        //this.setBackground(Color.getHSBColor(f, 0.5f, 0.8f));
+        this.add(words);      
     }
     
     
@@ -122,6 +121,7 @@ public class UpdatePage2 extends JPanel {
         }
     }
     public void resetText() {
+    	//テキストエリアのリセット
     	wordstext.setText("");
     	words.setText("");
     	

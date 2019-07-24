@@ -46,7 +46,7 @@ public class MainPage extends JFrame {
 	}
 
 	public void PanelChange(JPanel jp, String str) {
-
+		//ページが切り替わったときの処理
 		System.out.println(jp.getName());
 		String name = jp.getName();
 		if (name == PanelNames[0]) {
@@ -55,7 +55,7 @@ public class MainPage extends JFrame {
 		} else if (name == PanelNames[1]) {
 			sp = (SearchPage1) jp;
 			sp.setVisible(false);
-			
+
 		} else if (name == PanelNames[2]) {
 			sp2 = (InsertPage) jp;
 			sp2.setVisible(false);
@@ -76,14 +76,13 @@ public class MainPage extends JFrame {
 			sp6 = (UpdatePage2) jp;
 			sp6.setVisible(false);
 			sp6.resetText();
-	    } else if (name == PanelNames[7]) {
-			 sp7 = (IndexPage1) jp;
-			 sp7.setVisible(false);
+		} else if (name == PanelNames[7]) {
+			sp7 = (IndexPage1) jp;
+			sp7.setVisible(false);
 		} else if (name == PanelNames[8]) {
-			 sp8 = (IndexPage2) jp;
-			 sp8.setVisible(false);
-			 sp8.resetText();
-
+			sp8 = (IndexPage2) jp;
+			sp8.setVisible(false);
+			sp8.resetText();
 		}
 
 		if (str == PanelNames[0]) {
@@ -103,11 +102,10 @@ public class MainPage extends JFrame {
 			sp6.setVisible(true);
 			sp6.search_sql();
 		} else if (str == PanelNames[7]) {
-			 sp7.setVisible(true);
-		}else if (str == PanelNames[8]) {
+			sp7.setVisible(true);
+		} else if (str == PanelNames[8]) {
 			sp8.setVisible(true);
 			sp8.select_sql2();
 		}
 	}
-}	
-
+}

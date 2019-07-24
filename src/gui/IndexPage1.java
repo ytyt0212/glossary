@@ -30,8 +30,8 @@ public class IndexPage1 extends JPanel {
         paneltext.setBounds(180,150,400,100);
         this.add(paneltext);
         
-       String[] categorydata = {"ア","カ", "サ","タ","ナ","ハ","マ","ヤ","ラ","ワ"};
-       JComboBox category = new  JComboBox(categorydata);
+       String[] categorydata2 = {"ア","カ", "サ","タ","ナ","ハ","マ","ヤ","ラ","ワ"};
+       JComboBox category = new  JComboBox(categorydata2);
        category.setBounds(310,180,50,40);
        this.add(category);
        
@@ -39,9 +39,9 @@ public class IndexPage1 extends JPanel {
        
        
        //プルダウンメニュー「ア」の横に「行」の表示
-       JLabel tango2 = new JLabel("行");
-       tango2.setBounds(380,180,50,40);
-       this.add(tango2);
+       JLabel category2 = new JLabel("行");
+       category2.setBounds(380,180,50,40);
+       this.add(category2);
         
         btn1 = new JButton("実行");  
         btn1.setBounds(195, 330,200, 40); 

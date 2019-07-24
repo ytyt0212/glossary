@@ -17,8 +17,8 @@ public class SearchPage2 extends JPanel {
 	JButton btn3 = new JButton("単語更新");
 	MainPage mf;
     String str;
+    JTextField words;
     JTextField wordstext;
-    JTextField setumei;
     JTextField category;
     Sql search = new Sql();
     
@@ -41,10 +41,10 @@ public class SearchPage2 extends JPanel {
          this.add(wordslabel);
          
          //テキストボックス単語        
-         wordstext = new JTextField(1);        
-         wordstext.setBounds(130,50,100,40);
+         words = new JTextField(1);        
+         words.setBounds(130,50,100,40);
       
-         this.add(wordstext);
+         this.add(words);
          
        //「カテゴリ」表示
          JLabel categorylabel = new JLabel("カテゴリ");
@@ -57,9 +57,9 @@ public class SearchPage2 extends JPanel {
          this.add(category);
          
          //単語説明
-         setumei = new JTextField(5);
-         setumei.setBounds(100,150,380,200);
-         this.add(setumei);
+         wordstext = new JTextField(5);
+         wordstext.setBounds(100,150,380,200);
+         this.add(wordstext);
          
          
          //戻る画面遷移
@@ -113,8 +113,8 @@ public class SearchPage2 extends JPanel {
         
         
         //参照結果のセット
-        wordstext.setText(search.sql(s2)); 
-        setumei.setText(search.sql(t2));
+        words.setText(search.sql(s2)); 
+        wordstext.setText(search.sql(t2));
         category.setText(search.sql(c2));
         if(search.sql(c2) == null) {
         JOptionPane.showMessageDialog(null, "単語が見つかりません","エラー",JOptionPane.ERROR_MESSAGE);

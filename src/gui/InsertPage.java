@@ -17,8 +17,8 @@ import sql.Sql;
 public class InsertPage extends JPanel {
     JButton btn = new JButton("メインページへ");  
     JComboBox category2;
-    JTextField wordstext = null ;
-    JTextArea meantext = null ;
+    JTextField words = null ;
+    JTextArea wordstext = null ;
     
     MainPage mf;
     String str;
@@ -41,9 +41,9 @@ public class InsertPage extends JPanel {
         JTextField text1 = new JTextField (20);
         
         //テキストボックス「単語」
-        wordstext = new JTextField(20);
-        wordstext.setBounds(130,50,100,40);
-        this.add(wordstext);
+        words = new JTextField(20);
+        words.setBounds(130,50,100,40);
+        this.add(words);
         
         //プルダウンメニュー横に「カテゴリ」表示
         JLabel categorylabel = new JLabel("カテゴリ");
@@ -72,10 +72,10 @@ public class InsertPage extends JPanel {
         
 
         //テキストエリア「説明」
-        meantext = new JTextArea(20,10);
-        meantext.setBounds(100,150,380,200);
-        meantext.setLineWrap(true);
-        this.add(meantext);
+        wordstext = new JTextArea(20,10);
+        wordstext.setBounds(100,150,380,200);
+        wordstext.setLineWrap(true);
+        this.add(wordstext);
         
         //ボタン「登録」
         JButton btn2 = new JButton("登録");
@@ -88,9 +88,9 @@ public class InsertPage extends JPanel {
 				c_id = category.getSelectedIndex()+1;
 				StringBuilder i1 = new StringBuilder();
 				i1.append("insert into glossary(words,text,category_id,50on) values('");
-				i1.append(wordstext.getText());
+				i1.append(words.getText());
 				i1.append("','");
-				i1.append(meantext.getText());
+				i1.append(wordstext.getText());
 				i1.append("','");
 				i1.append(c_id);
 				i1.append("','");
@@ -98,7 +98,7 @@ public class InsertPage extends JPanel {
 				i1.append("')");
 				String i2 = i1.toString();
 				System.out.println(i2);
-				if(wordstext.getText().length() == 0) {
+				if(words.getText().length() == 0) {
 					JOptionPane.showMessageDialog(null, "単語を入力してください");
 				
 				}else {
@@ -130,8 +130,8 @@ public class InsertPage extends JPanel {
         mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel�ɖ߂�
     }
     public void resetText() {
+    	words.setText("");
     	wordstext.setText("");
-    	meantext.setText("");
     }
     	
     

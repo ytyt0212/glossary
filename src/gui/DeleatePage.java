@@ -13,7 +13,7 @@ import sql.Sql;
 public class DeleatePage extends JPanel {
     JButton btn = new JButton("メインページへ"); 
     JButton btn2 = new JButton("削除"); 
-    JTextField text1 = new JTextField(20);
+    JTextField words = new JTextField(20);
     MainPage mf;
     String str;
     Sql sql = new Sql();
@@ -33,7 +33,7 @@ public class DeleatePage extends JPanel {
         this.add(paneltext);
         
         
-        text1.setBounds(130,50,100,40);
+        words.setBounds(130,50,100,40);
         
         
         
@@ -45,14 +45,14 @@ public class DeleatePage extends JPanel {
         		
         		StringBuilder d1 = new StringBuilder();
             	d1.append("delete from glossary where words ='");
-            	d1.append(text1.getText());
+            	d1.append(words.getText());
             	d1.append("'");
                 String d2 = d1.toString();
                 System.out.println(d2);
                 
                 StringBuilder s1 = new StringBuilder();
             	s1.append("select words from glossary where words ='");
-            	s1.append(text1.getText());
+            	s1.append(words.getText());
             	s1.append("'");
                 String s2 = s1.toString();
                 System.out.println(s2);
@@ -77,7 +77,7 @@ public class DeleatePage extends JPanel {
         });
         this.add(btn);
         this.add(btn2);
-        this.add(text1);
+        this.add(words);
         
               
        
@@ -86,7 +86,7 @@ public class DeleatePage extends JPanel {
         mf.PanelChange((JPanel)this, mf.PanelNames[0]);//MainPanel�ɖ߂�
     }
     public void resetText() {
-    	text1.setText("");
+    	words.setText("");
     }
 }
 
